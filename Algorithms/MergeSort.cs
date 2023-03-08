@@ -2,7 +2,7 @@ using System;
 
 namespace Sorting_Algorithms {
     class MergeSort : SortingAlgorithm {
-        public override void SortArray(ref int[] array) {
+        public override void sortArray(ref int[] array) {
             throw new NotImplementedException();
         }
 

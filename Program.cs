@@ -22,11 +22,14 @@ namespace Sorting_Algorithms {
             // Measure elapsed time of calculation
             Stopwatch stopwatch = new Stopwatch();
             stopwatch.Start();
-
-            // algorithm.SortArray(ref array);
             
+            algorithm.sortArray(ref array);
+
             stopwatch.Stop();
+
             long elapsedTimeMs = stopwatch.ElapsedMilliseconds;
+            
+            Console.WriteLine(string.Join(", ", array));
             Console.WriteLine($"Elapsed time: {elapsedTimeMs} ms");
 
             Console.ReadLine();

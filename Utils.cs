@@ -3,7 +3,14 @@ using System.Text.RegularExpressions;
 
 namespace Sorting_Algorithms {
     class Utils {
-        private int[] list = {10, 6, 2, 4, 3, 5, 1, 8, 9, 7};
+        private int[] fixedArray = {
+            9, 18, 21, 2, 44, 33, 7, 36, 28, 1,
+            14, 12, 38, 31, 47, 23, 25, 4, 8, 40,
+            17, 16, 11, 29, 50, 46, 35, 45, 48, 5,
+            27, 10, 22, 39, 32, 42, 20, 30, 24, 26,
+            13, 43, 15, 19, 41, 49, 37, 6, 3, 34
+        };
+
         public SortingAlgorithm getAlgorithmType() {
             SortingAlgorithm? algorithm = null;
 
@@ -81,17 +88,17 @@ namespace Sorting_Algorithms {
                 if(answer == 1) {
                     Console.WriteLine("Please provide a list of integer numbers separated by spaces. (last character cannot be space)");
                     
-                    if(getCustomList(out int[] customList)) {
-                        Console.WriteLine($"You choose a custom list: {string.Join(", ",customList)}");
-                        return customList;
+                    if(getCustomList(out int[] customArray)) {
+                        Console.Write($"You choose a custom list:\n{string.Join(", ",customArray)}\n");
+                        return customArray;
                     } else {
-                        Console.WriteLine($"An error occurred selecting custom list. Pre-defined list will be used: {string.Join(", ", list)}");
-                        return list;
+                        Console.Write($"An error occurred selecting custom list. Pre-defined list will be used:\n{string.Join(", ", fixedArray)}\n");
+                        return fixedArray;
                     }
                 }
 
-                Console.WriteLine($"You choose a pre-configured list: {string.Join(", ", list)}");
-                return list;
+                Console.Write($"You choose a pre-configured list:\n{string.Join(", ", fixedArray)}\n");
+                return fixedArray;
                 
             }
         }
