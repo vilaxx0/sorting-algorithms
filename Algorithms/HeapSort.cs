@@ -2,7 +2,7 @@ using System;
 
 namespace Sorting_Algorithms {
     class HeapSort : SortingAlgorithm {
-        public override int[] SortArray() {
+        public override void SortArray(ref int[] array) {
             throw new NotImplementedException();
         }
 

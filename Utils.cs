@@ -61,7 +61,7 @@ namespace Sorting_Algorithms {
             return algorithm;
         }
 
-        public int[] getListForSorting() {
+        public int[] getArrayForSorting() {
             Console.WriteLine("Would you like to provide a custom list or use a pre-configured one?");
             Console.WriteLine("1. Custom List");
             Console.WriteLine("2. Pre-configured List");
@@ -79,24 +79,24 @@ namespace Sorting_Algorithms {
                 }
 
                 if(answer == 1) {
-                    Console.WriteLine("Please provide a list of integer numbers separated by spaces.");
+                    Console.WriteLine("Please provide a list of integer numbers separated by spaces. (last character cannot be space)");
                     
-                    if(askForCustomList(out int[] customList)) {
-                        Console.WriteLine($"You choose a custom list: {customList}");
+                    if(getCustomList(out int[] customList)) {
+                        Console.WriteLine($"You choose a custom list: {string.Join(", ",customList)}");
                         return customList;
                     } else {
-                        Console.WriteLine("An error occurred: Please try again.");
-                        continue;
+                        Console.WriteLine($"An error occurred selecting custom list. Pre-defined list will be used: {string.Join(", ", list)}");
+                        return list;
                     }
                 }
 
-                Console.WriteLine($"You choose a pre-configured list: {list}");
+                Console.WriteLine($"You choose a pre-configured list: {string.Join(", ", list)}");
                 return list;
                 
             }
         }
 
-        private bool askForCustomList(out int[] customList) {
+        private bool getCustomList(out int[] customList) {
             while(true) {
                 string? input = Console.ReadLine();
 
@@ -109,7 +109,7 @@ namespace Sorting_Algorithms {
                 bool isValid = Regex.IsMatch(input, @"^\d+(\s\d+)*$");
 
                 if(!isValid) {
-                    Console.WriteLine("The input only accepts integer numbers. Try again...");
+                    Console.WriteLine("The input only accepts integer numbers and the last character cannot be space. Try again...");
                     continue;
                 }
 
