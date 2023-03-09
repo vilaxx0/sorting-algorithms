@@ -2,7 +2,8 @@ using System;
 
 namespace Sorting_Algorithms {
     class HeapSort : SortingAlgorithm {
-        public override void sortArray(ref int[] array) {
+        public override void SortArray(ref int[] array) {
+            if(array.Length < 2) return;
             throw new NotImplementedException();
         }
 

@@ -8,7 +8,9 @@ namespace Sorting_Algorithms {
             Worst case:     O(n^2) 
             Average case:   O(n^2)
         */
-        public override void sortArray(ref int[] array) {
+        public override void SortArray(ref int[] array) {
+            if(array.Length < 2) return;
+
             for(int i = 0; i < array.Length - 1; i++) {
                 for(int j = 0; j < array.Length - i - 1; j++) {
                     if(array[j] > array[j+1]) {

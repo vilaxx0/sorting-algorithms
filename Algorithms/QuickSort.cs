@@ -9,7 +9,8 @@ namespace Sorting_Algorithms {
             Worst case:     O(n^2) 
             Average case:   O(n log n)
         */
-        public override void sortArray(ref int[] array) {
+        public override void SortArray(ref int[] array) {
+            if(array.Length < 2) return;
             quickSort(ref array, 0, array.Length - 1);
         }
 
