@@ -1,8 +1,13 @@
 using System;
 
 namespace Sorting_Algorithms {
-    // O(n^2)
     class BubbleSort : SortingAlgorithm {
+        /*
+            Time Complexity
+            Best case:      O(n)        
+            Worst case:     O(n^2) 
+            Average case:   O(n^2)
+        */
         public override void sortArray(ref int[] array) {
             for(int i = 0; i < array.Length - 1; i++) {
                 for(int j = 0; j < array.Length - i - 1; j++) {
@@ -11,12 +16,6 @@ namespace Sorting_Algorithms {
                     }
                 }
             }
-        }
-
-        private void swap(ref int a, ref int b) {
-            int temp = a;
-            a = b;
-            b = temp;
         }
 
         public override string ToString() {

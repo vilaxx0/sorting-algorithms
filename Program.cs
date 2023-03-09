@@ -17,12 +17,16 @@ namespace Sorting_Algorithms {
             algorithm = helperUtils.getAlgorithmType();
             array = helperUtils.getArrayForSorting();
 
+            Console.WriteLine("1000 copies of the array will be made and each of them will be sorted.");
             Console.WriteLine("Sorting...");
 
             // Measure elapsed time of calculation
             Stopwatch stopwatch = new Stopwatch();
             stopwatch.Start();
-            
+            for(int i = 0; i < 999; i++) {
+                int[] copyArray = (int[])array.Clone();
+                algorithm.sortArray(ref copyArray);
+            }
             algorithm.sortArray(ref array);
 
             stopwatch.Stop();
