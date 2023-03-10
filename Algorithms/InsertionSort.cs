@@ -14,7 +14,7 @@ namespace Sorting_Algorithms {
                 bool sorted = true;
                 for(int j = i; j > 0; j--) {
                     if(array[j-1] > array[j]) {
-                        swap(ref array[j], ref array[j-1]);
+                        swap(ref array[j-1], ref array[j]);
                         sorted = false;
                     }
 
