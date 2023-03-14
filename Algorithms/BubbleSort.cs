@@ -11,10 +11,23 @@ namespace Sorting_Algorithms {
         public override void SortArray(ref int[] array) {
             if(array.Length < 2) return;
 
-            for(int i = 0; i < array.Length - 1; i++) {
-                for(int j = 0; j < array.Length - i - 1; j++) {
-                    if(array[j] > array[j+1]) {
-                        swap(ref array[j], ref array[j+1]);
+            // Way 1
+            // for(int i = 0; i < array.Length - 1; i++) {
+            //     for(int j = 0; j < array.Length - i - 1; j++) {
+            //         if(array[j] > array[j+1]) {
+            //             swap(ref array[j], ref array[j+1]);
+            //         }
+            //     }
+            // }
+
+            // Way 2
+            bool swappedSomething = true;
+            while(swappedSomething) {
+                swappedSomething = false;
+                for(int i = 0; i < array.Length - 1; i++) {
+                    if(array[i] > array[i + 1]) {
+                        swappedSomething = true;
+                        swap(ref array[i], ref array[i + 1]);
                     }
                 }
             }
